@@ -1,0 +1,17 @@
+name: MorningJoin
+version: 1.0.0
+main: com.example.morningjoin.MorningJoin
+api-version: '26.3'
+description: Sets the world time to morning when the first player joins an empty server.
+commands:
+  morningjoin:
+    description: Reloads the MorningJoin configuration.
+    usage: /morningjoin reload
+    permission: morningjoin.admin
+permissions:
+  morningjoin.admin:
+    description: Allows reloading the MorningJoin config.
+    default: op
+  morningjoin.bypass:
+    description: Bypasses the relog cooldown.
+    default: false

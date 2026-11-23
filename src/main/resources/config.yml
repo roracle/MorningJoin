@@ -1,0 +1,32 @@
+# MorningJoin Configuration
+
+# Minutes the server must remain empty before the same player can trigger morning again.
+# Set to 0 to disable the anti-abuse cooldown.
+cooldown-minutes: 10
+
+# If true, ANY player joining within the cooldown window is blocked from resetting time.
+# If false, only the last player who disconnected is blocked.
+global-cooldown: false
+
+# Only set time to morning if the world is at or past night-start-time.
+# If false, joining an empty server will always set the time to target-time.
+night-only: true
+
+# The world tick when "night/late-day" begins for the night-only check (0 to 23999).
+# 12000 is exact sunset; 10500 gives a ~75-second late-afternoon buffer so players
+# don't log in right as the sun is about to go down.
+night-start-time: 10500
+
+# World time in ticks to set when triggered (0 = sunrise, 1000 = morning, 6000 = noon).
+target-time: 1000
+
+# Also clear rain and thunderstorms when setting time to morning.
+clear-weather: true
+
+# List of worlds to check and update when the first player joins.
+worlds:
+  - world
+
+# Message sent to the player when the time is set to morning (supports MiniMessage formatting).
+# Leave empty ("") to disable.
+message: "<gold>Welcome back! <yellow>The time has been set to morning."
